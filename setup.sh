@@ -10,10 +10,10 @@ pkg install -y clang
 
 pkg install -y golang
 
-if grep -q '^export CC=' "$CONFIG"; then
-    sed -i 's/^export CC=.*/export CC=gcc/' "$CONFIG"
+if grep -q '^alias go=' "$CONFIG"; then
+    sed -i 's|^alias go=.*|alias go="CC=/data/data/com.termux/files/usr/bin/arm-linux-androideabi-clang go"|' "$CONFIG"
 else
-    echo 'export CC=gcc' >> "$CONFIG"
+    echo 'alias go="CC=/data/data/com.termux/files/usr/bin/arm-linux-androideabi-clang go"' >> "$CONFIG"
 fi
 
 source "$CONFIG"
