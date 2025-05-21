@@ -1,1 +1,1 @@
-# termux-go-setup
+# termux-go-install
